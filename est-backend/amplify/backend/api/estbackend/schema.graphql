@@ -1,0 +1,22 @@
+type Establishment @model {
+	id: ID!
+	name: String!
+	category: String!
+	open: Boolean
+	ratings: [Rating] @connection(name: "BusinessRatings") 
+}
+
+type User @model {
+	id: ID!
+	username: String!
+	ratings: [Rating] @connection(name: "UserRatings")
+}
+
+type Rating @model {
+	id: ID!
+	overall_rating: Int!
+	ratingUserID: String!
+	ratingEstablishmentID: String!
+	user: User @connection(name: "UserRatings")
+	establishment: Establishment @connection(name: "BusinessRatings")
+}
