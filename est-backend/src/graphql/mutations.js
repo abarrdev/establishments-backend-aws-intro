@@ -15,8 +15,8 @@ export const createEstablishment = /* GraphQL */ `
         items {
           id
           overall_rating
-          ratingUserID
-          ratingEstablishmentID
+          ratingUserId
+          ratingEstablishmentId
           createdAt
           updatedAt
         }
@@ -41,8 +41,8 @@ export const updateEstablishment = /* GraphQL */ `
         items {
           id
           overall_rating
-          ratingUserID
-          ratingEstablishmentID
+          ratingUserId
+          ratingEstablishmentId
           createdAt
           updatedAt
         }
@@ -67,8 +67,8 @@ export const deleteEstablishment = /* GraphQL */ `
         items {
           id
           overall_rating
-          ratingUserID
-          ratingEstablishmentID
+          ratingUserId
+          ratingEstablishmentId
           createdAt
           updatedAt
         }
@@ -91,8 +91,8 @@ export const createUser = /* GraphQL */ `
         items {
           id
           overall_rating
-          ratingUserID
-          ratingEstablishmentID
+          ratingUserId
+          ratingEstablishmentId
           createdAt
           updatedAt
         }
@@ -115,8 +115,8 @@ export const updateUser = /* GraphQL */ `
         items {
           id
           overall_rating
-          ratingUserID
-          ratingEstablishmentID
+          ratingUserId
+          ratingEstablishmentId
           createdAt
           updatedAt
         }
@@ -139,8 +139,8 @@ export const deleteUser = /* GraphQL */ `
         items {
           id
           overall_rating
-          ratingUserID
-          ratingEstablishmentID
+          ratingUserId
+          ratingEstablishmentId
           createdAt
           updatedAt
         }
@@ -159,8 +159,8 @@ export const createRating = /* GraphQL */ `
     createRating(input: $input, condition: $condition) {
       id
       overall_rating
-      ratingUserID
-      ratingEstablishmentID
+      ratingUserId
+      ratingEstablishmentId
       user {
         id
         username
@@ -194,8 +194,8 @@ export const updateRating = /* GraphQL */ `
     updateRating(input: $input, condition: $condition) {
       id
       overall_rating
-      ratingUserID
-      ratingEstablishmentID
+      ratingUserId
+      ratingEstablishmentId
       user {
         id
         username
@@ -229,8 +229,8 @@ export const deleteRating = /* GraphQL */ `
     deleteRating(input: $input, condition: $condition) {
       id
       overall_rating
-      ratingUserID
-      ratingEstablishmentID
+      ratingUserId
+      ratingEstablishmentId
       user {
         id
         username

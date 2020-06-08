@@ -12,8 +12,8 @@ export const onCreateEstablishment = /* GraphQL */ `
         items {
           id
           overall_rating
-          ratingUserID
-          ratingEstablishmentID
+          ratingUserId
+          ratingEstablishmentId
           createdAt
           updatedAt
         }
@@ -35,8 +35,8 @@ export const onUpdateEstablishment = /* GraphQL */ `
         items {
           id
           overall_rating
-          ratingUserID
-          ratingEstablishmentID
+          ratingUserId
+          ratingEstablishmentId
           createdAt
           updatedAt
         }
@@ -58,8 +58,8 @@ export const onDeleteEstablishment = /* GraphQL */ `
         items {
           id
           overall_rating
-          ratingUserID
-          ratingEstablishmentID
+          ratingUserId
+          ratingEstablishmentId
           createdAt
           updatedAt
         }
@@ -79,8 +79,8 @@ export const onCreateUser = /* GraphQL */ `
         items {
           id
           overall_rating
-          ratingUserID
-          ratingEstablishmentID
+          ratingUserId
+          ratingEstablishmentId
           createdAt
           updatedAt
         }
@@ -100,8 +100,8 @@ export const onUpdateUser = /* GraphQL */ `
         items {
           id
           overall_rating
-          ratingUserID
-          ratingEstablishmentID
+          ratingUserId
+          ratingEstablishmentId
           createdAt
           updatedAt
         }
@@ -121,8 +121,8 @@ export const onDeleteUser = /* GraphQL */ `
         items {
           id
           overall_rating
-          ratingUserID
-          ratingEstablishmentID
+          ratingUserId
+          ratingEstablishmentId
           createdAt
           updatedAt
         }
@@ -138,8 +138,8 @@ export const onCreateRating = /* GraphQL */ `
     onCreateRating {
       id
       overall_rating
-      ratingUserID
-      ratingEstablishmentID
+      ratingUserId
+      ratingEstablishmentId
       user {
         id
         username
@@ -170,8 +170,8 @@ export const onUpdateRating = /* GraphQL */ `
     onUpdateRating {
       id
       overall_rating
-      ratingUserID
-      ratingEstablishmentID
+      ratingUserId
+      ratingEstablishmentId
       user {
         id
         username
@@ -202,8 +202,8 @@ export const onDeleteRating = /* GraphQL */ `
     onDeleteRating {
       id
       overall_rating
-      ratingUserID
-      ratingEstablishmentID
+      ratingUserId
+      ratingEstablishmentId
       user {
         id
         username

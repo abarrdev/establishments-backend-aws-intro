@@ -444,7 +444,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "ratingUserID",
+          "name" : "ratingUserId",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -459,7 +459,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "ratingEstablishmentID",
+          "name" : "ratingEstablishmentId",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -679,7 +679,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "ratingUserID",
+          "name" : "ratingUserId",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -688,7 +688,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "ratingEstablishmentID",
+          "name" : "ratingEstablishmentId",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2167,47 +2167,29 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "ratingUserID",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "ratingEstablishmentID",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
           "name" : "ratingUserId",
           "description" : null,
           "type" : {
-            "kind" : "SCALAR",
-            "name" : "ID",
-            "ofType" : null
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
           },
           "defaultValue" : null
         }, {
           "name" : "ratingEstablishmentId",
           "description" : null,
           "type" : {
-            "kind" : "SCALAR",
-            "name" : "ID",
-            "ofType" : null
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
           },
           "defaultValue" : null
         } ],
@@ -2229,7 +2211,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "ratingUserID",
+          "name" : "ratingUserId",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2238,7 +2220,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "ratingEstablishmentID",
+          "name" : "ratingEstablishmentId",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2313,29 +2295,11 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "ratingUserID",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "ratingEstablishmentID",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
           "name" : "ratingUserId",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
-            "name" : "ID",
+            "name" : "String",
             "ofType" : null
           },
           "defaultValue" : null
@@ -2344,7 +2308,7 @@
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
-            "name" : "ID",
+            "name" : "String",
             "ofType" : null
           },
           "defaultValue" : null
