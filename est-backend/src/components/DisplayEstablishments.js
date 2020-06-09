@@ -12,9 +12,7 @@ class DisplayEstablishments extends Component {
 	}
 
 	componentDidMount = async () => {
-		this.getEstablishments()
-		console.log("all good")
-
+		this.getEstablishments();
 	}
 
 	getEstablishments = async () => {
