@@ -16,7 +16,9 @@ type Rating @model {
 	id: ID!
 	overall_rating: Int!
 	ratingUserId: String!
+	ratingUserUsername: String!
 	ratingEstablishmentId: String!
+	ratingEstablishmentName: String!
 	user: User @connection(name: "UserRatings")
 	establishment: Establishment @connection(name: "BusinessRatings")
 }

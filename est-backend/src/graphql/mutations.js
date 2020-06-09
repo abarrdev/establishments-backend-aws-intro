@@ -16,7 +16,9 @@ export const createEstablishment = /* GraphQL */ `
           id
           overall_rating
           ratingUserId
+          ratingUserUsername
           ratingEstablishmentId
+          ratingEstablishmentName
           createdAt
           updatedAt
         }
@@ -42,7 +44,9 @@ export const updateEstablishment = /* GraphQL */ `
           id
           overall_rating
           ratingUserId
+          ratingUserUsername
           ratingEstablishmentId
+          ratingEstablishmentName
           createdAt
           updatedAt
         }
@@ -68,7 +72,9 @@ export const deleteEstablishment = /* GraphQL */ `
           id
           overall_rating
           ratingUserId
+          ratingUserUsername
           ratingEstablishmentId
+          ratingEstablishmentName
           createdAt
           updatedAt
         }
@@ -92,7 +98,9 @@ export const createUser = /* GraphQL */ `
           id
           overall_rating
           ratingUserId
+          ratingUserUsername
           ratingEstablishmentId
+          ratingEstablishmentName
           createdAt
           updatedAt
         }
@@ -116,7 +124,9 @@ export const updateUser = /* GraphQL */ `
           id
           overall_rating
           ratingUserId
+          ratingUserUsername
           ratingEstablishmentId
+          ratingEstablishmentName
           createdAt
           updatedAt
         }
@@ -140,7 +150,9 @@ export const deleteUser = /* GraphQL */ `
           id
           overall_rating
           ratingUserId
+          ratingUserUsername
           ratingEstablishmentId
+          ratingEstablishmentName
           createdAt
           updatedAt
         }
@@ -160,7 +172,9 @@ export const createRating = /* GraphQL */ `
       id
       overall_rating
       ratingUserId
+      ratingUserUsername
       ratingEstablishmentId
+      ratingEstablishmentName
       user {
         id
         username
@@ -195,7 +209,9 @@ export const updateRating = /* GraphQL */ `
       id
       overall_rating
       ratingUserId
+      ratingUserUsername
       ratingEstablishmentId
+      ratingEstablishmentName
       user {
         id
         username
@@ -230,7 +246,9 @@ export const deleteRating = /* GraphQL */ `
       id
       overall_rating
       ratingUserId
+      ratingUserUsername
       ratingEstablishmentId
+      ratingEstablishmentName
       user {
         id
         username

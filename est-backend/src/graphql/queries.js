@@ -13,7 +13,9 @@ export const getEstablishment = /* GraphQL */ `
           id
           overall_rating
           ratingUserId
+          ratingUserUsername
           ratingEstablishmentId
+          ratingEstablishmentName
           createdAt
           updatedAt
         }
@@ -56,7 +58,9 @@ export const getUser = /* GraphQL */ `
           id
           overall_rating
           ratingUserId
+          ratingUserUsername
           ratingEstablishmentId
+          ratingEstablishmentName
           createdAt
           updatedAt
         }
@@ -93,7 +97,9 @@ export const getRating = /* GraphQL */ `
       id
       overall_rating
       ratingUserId
+      ratingUserUsername
       ratingEstablishmentId
+      ratingEstablishmentName
       user {
         id
         username
@@ -130,7 +136,9 @@ export const listRatings = /* GraphQL */ `
         id
         overall_rating
         ratingUserId
+        ratingUserUsername
         ratingEstablishmentId
+        ratingEstablishmentName
         user {
           id
           username
