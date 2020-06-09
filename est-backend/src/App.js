@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import DisplayEstablishments from './components/DisplayEstablishments'
+// import DisplayEstablishments from './components/DisplayEstablishments'
+import DisplayRatings from './components/DisplayRatings'
 
 function App() {
   return (
     <div className="App">
-        <DisplayEstablishments />
+        {/* <DisplayEstablishments /> */}
+        <DisplayRatings />
     </div>
   );
 }
