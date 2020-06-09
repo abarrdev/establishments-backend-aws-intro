@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { listRatings } from '../graphql/queries'
 import { API, graphqlOperation } from 'aws-amplify'
+import DeleteRating from './DeleteRating'
 
 class DisplayRatings extends Component {
 
@@ -36,6 +37,7 @@ class DisplayRatings extends Component {
 						{new Date(rating.createdAt).toDateString()}{"."}
 					</time>
 					</span>
+					<DeleteRating />
 				</div>
 			)
 		})
