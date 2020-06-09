@@ -4,19 +4,35 @@ import { API, graphqlOperation } from 'aws-amplify'
 
 class DisplayEstablishments extends Component {
 
+	constructor() {
+		super()
+		this.state = {
+			establishments: []
+		}
+	}
+
 	componentDidMount = async () => {
 		this.getEstablishments()
 	}
 
 	getEstablishments = async () => {
 		const result = await API.graphql(graphqlOperation(listEstablishments))
-		console.log("All Establishments...", JSON.stringify(result.data.listEstablishments.items))
+		// console.log("All Establishments...", result.data.listEstablishments.items)
+		this.setState({
+			establishments: result.data.listEstablishments.items
+		})
 	}
 
 	render() {
-		return(
-			<div>Hello, World.</div>
-		)
+		const { establishments } = this.state
+
+		return establishments.map(est => {
+			return(
+				<div className="establishment-container">
+					<h1 key={est.id}>{est.name}</h1>
+				</div>
+			)
+		})
 	}
 }
 
