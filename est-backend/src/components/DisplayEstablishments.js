@@ -28,7 +28,7 @@ class DisplayEstablishments extends Component {
 
 		return establishments.map(est => {
 			return(
-				<div className="establishment-container">
+				<div className="establishments">
 					<h1 key={est.id}>{est.name}</h1>
 				</div>
 			)
