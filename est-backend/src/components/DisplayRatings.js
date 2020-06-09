@@ -5,7 +5,6 @@ import DeleteRating from './DeleteRating'
 import EditRating from './EditRating'
 
 class DisplayRatings extends Component {
-
 	constructor() {
 		super()
 		this.state = {

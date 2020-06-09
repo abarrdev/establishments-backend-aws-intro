@@ -5,7 +5,10 @@ class CreateRating extends Component {
 		super()
 		this.state = {
 			ratingUserId: "",
-			ratingEstablishmentId: ""
+			ratingUserUsername: "",
+			ratingEstablishmentId: "",
+			ratingEstablishmentName: "",
+			overallRating: NaN
 		}
 	}
 
@@ -15,7 +18,14 @@ class CreateRating extends Component {
 
 	handleAddRating = async event => {
 		event.preventDefault();
-		console.log('clickedy')
+		const input = {
+			ratingUserId: this.state.ratingUserId,
+			ratingUserUsername: this.state.ratingUserUsername,
+			ratingEstablishmentId: this.state.ratingEstablishmentId,
+			ratingEstablishmentName: this.state.ratingEstablishmentName,
+			overallRating: this.state.overallRating,
+			createdAt: new Date().toISOString()
+		}
 	}
 
 	render() {
