@@ -24,7 +24,7 @@ class DisplayRatings extends Component {
 	}
 
 	render() {
-		console.log(this.state.ratings[0])
+		// console.log(this.state.ratings[0])
 		const { ratings } = this.state
 
 		return ratings.map(rating => {
