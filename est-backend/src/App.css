@@ -42,14 +42,15 @@ input[type=text], select {
 
 input[type=submit] {
   width: 100%;
-  background-color: #4CAF50;
-  color: white;
+  background-color: rgba(12, 177, 18, 0.441);
+  color: rgb(0, 0, 0);
   padding: 14px 20px;
   margin: 8px 0;
-  border: none;
+	border: 1px #ccc dotted;
   border-radius: 4px;
   cursor: pointer;
 }
+
 
 input[type=submit]:hover {
   background-color: #45a049;
@@ -159,6 +160,7 @@ button{
   cursor: pointer;
   margin-top: 15px;
 }
+
 
 /* .users-liked */
 .users-rated {
