@@ -13,11 +13,12 @@ class DisplayEstablishments extends Component {
 
 	componentDidMount = async () => {
 		this.getEstablishments()
+		console.log("all good")
+
 	}
 
 	getEstablishments = async () => {
 		const result = await API.graphql(graphqlOperation(listEstablishments))
-		// console.log("All Establishments...", result.data.listEstablishments.items)
 		this.setState({
 			establishments: result.data.listEstablishments.items
 		})
@@ -28,8 +29,8 @@ class DisplayEstablishments extends Component {
 
 		return establishments.map(est => {
 			return(
-				<div className="establishments">
-					<h1 key={est.id}>{est.name}</h1>
+				<div key={est.id} className="establishments">
+					<h1>{est.name}</h1>
 				</div>
 			)
 		})
