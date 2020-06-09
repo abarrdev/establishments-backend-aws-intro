@@ -28,12 +28,25 @@ class DisplayRatings extends Component {
 
 		return ratings.map(rating => {
 			return(
-				<div key={rating.id} className="establishments">
-					<span>{"The user "}{rating.user.username}{" gave "}{rating.establishment.name}{" a "}{rating.overall_rating}{" rating."}</span>
+				<div key={rating.id} className="establishments" style={rowStyle}>
+					<span>{"The user "}{rating.user.username}{" gave "}
+					{rating.establishment.name}{" a rating of "}{rating.overall_rating}
+					{" on "}
+					<time style={{fontStyle: 'italic'}}>
+						{new Date(rating.createdAt).toDateString()}{"."}
+					</time>
+					</span>
 				</div>
 			)
 		})
 	}
+}
+
+const rowStyle = {
+	background: '#f4f4f4',
+	padding: '10px',
+	border: '1px #ccc dotted',
+	margin: '14px'
 }
 
 export default DisplayRatings;
