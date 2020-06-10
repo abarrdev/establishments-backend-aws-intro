@@ -28,7 +28,7 @@ class CreateRating extends Component {
 		const input = {
 			ratingUserId: "b36b05d1-bdbd-4a1b-a013-97df769b5d8e", //this.state.ratingUserId,
 			ratingUserUsername: this.state.ratingUserUsername,
-			ratingEstablishmentId: "ef1f4106-6e8f-4285-ad4d-54690820bebb",//this.state.ratingEstablishmentId,
+			ratingEstablishmentId: "ef1f4106-6e8f-4285-ad4d-54690820bebb", //this.state.ratingEstablishmentId,
 			ratingEstablishmentName: this.state.ratingEstablishmentName,
 			overall_rating: parseInt(this.state.overall_rating),
 			// createdAt: new Date().toISOString()
