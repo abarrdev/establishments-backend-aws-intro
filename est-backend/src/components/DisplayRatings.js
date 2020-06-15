@@ -72,6 +72,7 @@ class DisplayRatings extends Component {
 				<div key={rating.id} className="establishments" style={rowStyle}>
 					<span>{"The user "}{rating.ratingUserUsername}{" gave "}
 					{rating.establishment.name}{" a rating of "}{rating.overall_rating}
+					{/* ----might need to change rating.establishment.name to rating.ratingEstablishmentName???------ */}
 					{" on "}
 					<time style={{fontStyle: 'italic'}}>
 						{new Date(rating.createdAt).toDateString()}{"."}
@@ -79,7 +80,7 @@ class DisplayRatings extends Component {
 					</span>
 					<span>
 					<DeleteRating data={rating}/>
-					<EditRating />
+					<EditRating data={rating}/>
 					</span>
 
 				</div>
