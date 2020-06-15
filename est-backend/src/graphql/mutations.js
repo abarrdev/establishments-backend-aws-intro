@@ -85,84 +85,6 @@ export const deleteEstablishment = /* GraphQL */ `
     }
   }
 `;
-export const createUser = /* GraphQL */ `
-  mutation CreateUser(
-    $input: CreateUserInput!
-    $condition: ModelUserConditionInput
-  ) {
-    createUser(input: $input, condition: $condition) {
-      id
-      username
-      ratings {
-        items {
-          id
-          overall_rating
-          ratingUserId
-          ratingUserUsername
-          ratingEstablishmentId
-          ratingEstablishmentName
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateUser = /* GraphQL */ `
-  mutation UpdateUser(
-    $input: UpdateUserInput!
-    $condition: ModelUserConditionInput
-  ) {
-    updateUser(input: $input, condition: $condition) {
-      id
-      username
-      ratings {
-        items {
-          id
-          overall_rating
-          ratingUserId
-          ratingUserUsername
-          ratingEstablishmentId
-          ratingEstablishmentName
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteUser = /* GraphQL */ `
-  mutation DeleteUser(
-    $input: DeleteUserInput!
-    $condition: ModelUserConditionInput
-  ) {
-    deleteUser(input: $input, condition: $condition) {
-      id
-      username
-      ratings {
-        items {
-          id
-          overall_rating
-          ratingUserId
-          ratingUserUsername
-          ratingEstablishmentId
-          ratingEstablishmentName
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const createRating = /* GraphQL */ `
   mutation CreateRating(
     $input: CreateRatingInput!
@@ -175,15 +97,6 @@ export const createRating = /* GraphQL */ `
       ratingUserUsername
       ratingEstablishmentId
       ratingEstablishmentName
-      user {
-        id
-        username
-        ratings {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       establishment {
         id
         name
@@ -212,15 +125,6 @@ export const updateRating = /* GraphQL */ `
       ratingUserUsername
       ratingEstablishmentId
       ratingEstablishmentName
-      user {
-        id
-        username
-        ratings {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       establishment {
         id
         name
@@ -249,15 +153,6 @@ export const deleteRating = /* GraphQL */ `
       ratingUserUsername
       ratingEstablishmentId
       ratingEstablishmentName
-      user {
-        id
-        username
-        ratings {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       establishment {
         id
         name

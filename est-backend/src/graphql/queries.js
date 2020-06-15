@@ -48,49 +48,6 @@ export const listEstablishments = /* GraphQL */ `
     }
   }
 `;
-export const getUser = /* GraphQL */ `
-  query GetUser($id: ID!) {
-    getUser(id: $id) {
-      id
-      username
-      ratings {
-        items {
-          id
-          overall_rating
-          ratingUserId
-          ratingUserUsername
-          ratingEstablishmentId
-          ratingEstablishmentName
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listUsers = /* GraphQL */ `
-  query ListUsers(
-    $filter: ModelUserFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        username
-        ratings {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
 export const getRating = /* GraphQL */ `
   query GetRating($id: ID!) {
     getRating(id: $id) {
@@ -100,15 +57,6 @@ export const getRating = /* GraphQL */ `
       ratingUserUsername
       ratingEstablishmentId
       ratingEstablishmentName
-      user {
-        id
-        username
-        ratings {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       establishment {
         id
         name
@@ -139,12 +87,6 @@ export const listRatings = /* GraphQL */ `
         ratingUserUsername
         ratingEstablishmentId
         ratingEstablishmentName
-        user {
-          id
-          username
-          createdAt
-          updatedAt
-        }
         establishment {
           id
           name
