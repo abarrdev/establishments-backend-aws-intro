@@ -6,12 +6,6 @@ type Establishment @model {
 	ratings: [Rating] @connection(name: "BusinessRatings") 
 }
 
-type User @model {
-	id: ID!
-	username: String!
-	ratings: [Rating] @connection(name: "UserRatings")
-}
-
 type Rating @model {
 	id: ID!
 	overall_rating: Int!
@@ -19,6 +13,5 @@ type Rating @model {
 	ratingUserUsername: String!
 	ratingEstablishmentId: String!
 	ratingEstablishmentName: String!
-	user: User @connection(name: "UserRatings")
 	establishment: Establishment @connection(name: "BusinessRatings")
 }

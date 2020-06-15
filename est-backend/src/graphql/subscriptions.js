@@ -76,75 +76,6 @@ export const onDeleteEstablishment = /* GraphQL */ `
     }
   }
 `;
-export const onCreateUser = /* GraphQL */ `
-  subscription OnCreateUser {
-    onCreateUser {
-      id
-      username
-      ratings {
-        items {
-          id
-          overall_rating
-          ratingUserId
-          ratingUserUsername
-          ratingEstablishmentId
-          ratingEstablishmentName
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateUser = /* GraphQL */ `
-  subscription OnUpdateUser {
-    onUpdateUser {
-      id
-      username
-      ratings {
-        items {
-          id
-          overall_rating
-          ratingUserId
-          ratingUserUsername
-          ratingEstablishmentId
-          ratingEstablishmentName
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteUser = /* GraphQL */ `
-  subscription OnDeleteUser {
-    onDeleteUser {
-      id
-      username
-      ratings {
-        items {
-          id
-          overall_rating
-          ratingUserId
-          ratingUserUsername
-          ratingEstablishmentId
-          ratingEstablishmentName
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const onCreateRating = /* GraphQL */ `
   subscription OnCreateRating {
     onCreateRating {
@@ -154,15 +85,6 @@ export const onCreateRating = /* GraphQL */ `
       ratingUserUsername
       ratingEstablishmentId
       ratingEstablishmentName
-      user {
-        id
-        username
-        ratings {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       establishment {
         id
         name
@@ -188,15 +110,6 @@ export const onUpdateRating = /* GraphQL */ `
       ratingUserUsername
       ratingEstablishmentId
       ratingEstablishmentName
-      user {
-        id
-        username
-        ratings {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       establishment {
         id
         name
@@ -222,15 +135,6 @@ export const onDeleteRating = /* GraphQL */ `
       ratingUserUsername
       ratingEstablishmentId
       ratingEstablishmentName
-      user {
-        id
-        username
-        ratings {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       establishment {
         id
         name
