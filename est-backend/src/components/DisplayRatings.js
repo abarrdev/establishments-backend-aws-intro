@@ -3,7 +3,7 @@ import { API, graphqlOperation } from 'aws-amplify' //amplify files
 import DeleteRating from './DeleteRating' 
 import EditRating from './EditRating'
 import { listRatings } from '../graphql/queries' //pre-existing within /graphql
-import { onCreateRating } from '../graphql/subscriptions' //pre-existing within /graphql
+import { onCreateRating, onDeleteRating } from '../graphql/subscriptions' //pre-existing within /graphql
 
 class DisplayRatings extends Component {
 	constructor() {
@@ -17,19 +17,27 @@ class DisplayRatings extends Component {
 
 	componentDidMount = async () => {
 		//------retrieves existing ratings------//
-		this.getRatings()
-		//-------once a new rating is created..------//
-		this.createRatingListener = API.graphql(graphqlOperation(onCreateRating))
-			//-----invoke subscription------//
+		this.getRatings() 
+		
+		//------updates state after new rating is created------//
+		this.createRatingListener = API.graphql(graphqlOperation(onCreateRating)) //-------once a new rating is created..------//
+			.subscribe({ //-----invoke subscription------//
+				next: ratingData => { //-----..get the data for that rating-----//
+					const newRating = ratingData.value.data.onCreateRating //---store in a var----//
+					const prevRatings = this.state.ratings.filter(rating => rating.id !== newRating.id) //-----exclude duplicates (by id) from state-----//
+					const updatedRatings = [newRating, ...prevRatings] //----store new rating + filtered state (display new first)-----//
+					this.setState({ //------update state------//
+						ratings: updatedRatings
+					})
+				}
+			})
+		
+		//------updates state after a rating is deleted-----//	
+		this.deleteRatingListener = API.graphql(graphqlOperation(onDeleteRating))
 			.subscribe({
-				//-----..get the data for that rating-----//
 				next: ratingData => {
-					const newRating = ratingData.value.data.onCreateRating
-					//-----exclude any duplicates (by id only)-----//
-					const prevRatings = this.state.ratings.filter(rating => rating.id !== newRating.id)
-					//-----store newly created rating + filtered version of prev state into new variable (newest rating displays first)------//
-					const updatedRatings = [newRating, ...prevRatings]
-					//------update state------//
+					const deletedRating = ratingData.value.data.onDeleteRating
+					const updatedRatings = this.state.ratings.filter(rating => rating.id !== deletedRating.id)
 					this.setState({
 						ratings: updatedRatings
 					})
@@ -39,8 +47,9 @@ class DisplayRatings extends Component {
 
 
 	componentWillUnmount() {
-		//-----exit subscription------//
+		//-----exit subscriptions-----//
 		this.createRatingListener.unsubscribe()
+		this.deleteRatingListener.unsubscribe()
 	}
 
 
@@ -69,7 +78,7 @@ class DisplayRatings extends Component {
 					</time>
 					</span>
 					<span>
-					<DeleteRating />
+					<DeleteRating data={rating}/>
 					<EditRating />
 					</span>
 

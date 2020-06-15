@@ -16,7 +16,7 @@ class CreateRating extends Component {
 	}
 
 	componentDidMount = async () => {
-		await Auth.currentUserInfo() // currentUserInfo is a built-in fn
+		await Auth.currentUserInfo() //----currentUserInfo is a built-in fn-----//
 			.then(user => {
 				this.setState({
 					ratingUserId: user.attributes.sub,
@@ -49,9 +49,6 @@ class CreateRating extends Component {
 
 		//-----clearing form-------//
 		this.setState({ 
-			ratingUserId: "",
-			ratingUserUsername: "",
-			ratingEstablishmentId: "",
 			ratingEstablishmentName: "",
 			overall_rating: "",
 			// createdAt: ""
