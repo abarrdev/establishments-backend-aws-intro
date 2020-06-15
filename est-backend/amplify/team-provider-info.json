@@ -10,6 +10,11 @@
             "StackName": "amplify-estbackend-estapi-121940",
             "StackId": "arn:aws:cloudformation:us-east-1:513397919272:stack/amplify-estbackend-estapi-121940/3deea320-a9ac-11ea-984b-0a5cf73de175",
             "AmplifyAppId": "dr2980ddry6bn"
+        },
+        "categories": {
+            "auth": {
+                "estbackend764c9fef": {}
+            }
         }
     }
 }
