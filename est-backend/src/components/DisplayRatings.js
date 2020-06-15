@@ -61,7 +61,7 @@ class DisplayRatings extends Component {
 			// {console.log(rating.user)}
 			return(
 				<div key={rating.id} className="establishments" style={rowStyle}>
-					<span>{"The user "}{rating.user.username}{" gave "}
+					<span>{"The user "}{rating.ratingUserUsername}{" gave "}
 					{rating.establishment.name}{" a rating of "}{rating.overall_rating}
 					{" on "}
 					<time style={{fontStyle: 'italic'}}>
