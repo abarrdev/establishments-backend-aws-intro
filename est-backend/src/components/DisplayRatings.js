@@ -3,7 +3,7 @@ import { API, graphqlOperation } from 'aws-amplify' //amplify files
 import DeleteRating from './DeleteRating' 
 import EditRating from './EditRating'
 import { listRatings } from '../graphql/queries' //pre-existing within /graphql
-import { onCreateRating, onDeleteRating } from '../graphql/subscriptions' //pre-existing within /graphql
+import { onCreateRating, onDeleteRating, onUpdateRating } from '../graphql/subscriptions' //pre-existing within /graphql
 
 class DisplayRatings extends Component {
 	constructor() {
@@ -43,6 +43,24 @@ class DisplayRatings extends Component {
 					})
 				}
 			})
+
+		//----updates state after a rating is updated----//
+		this.updateRatingListener = API.graphql(graphqlOperation(onUpdateRating))
+			.subscribe({
+				next: ratingData => {
+					const { ratings } = this.state
+					const updatedRating = ratingData.value.data.onUpdateRating
+					const index = ratings.findIndex(rating => rating.id === updatedRating.id)
+					const updatedRatings = [
+						...ratings.slice(0, index), 
+						updatedRating,
+						...ratings.slice(index + 1)
+					]
+					this.setState({
+						ratings: updatedRatings
+					})
+				}
+			})
 	}
 
 
@@ -50,6 +68,7 @@ class DisplayRatings extends Component {
 		//-----exit subscriptions-----//
 		this.createRatingListener.unsubscribe()
 		this.deleteRatingListener.unsubscribe()
+		this.updateRatingListener.unsubscribe()
 	}
 
 
@@ -61,7 +80,6 @@ class DisplayRatings extends Component {
 		})
 	}
 
-	//WHERE YOU LEFT OFF: NEED TO DELETE OLD USER TABLE AND EDIT + UPDATE SCHEMA TO REFLECT THIS
 
 	render() {
 		const { ratings } = this.state
