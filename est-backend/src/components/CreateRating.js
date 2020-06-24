@@ -74,10 +74,3 @@ export default CreateRating;
 
 
 
-
-
-// type Location {
-// 	id: ID!
-// 	longitude: Int!
-// 	latitude: Int!
-//   }

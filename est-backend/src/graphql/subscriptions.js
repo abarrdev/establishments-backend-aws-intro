@@ -16,6 +16,7 @@ export const onCreateEstablishment = /* GraphQL */ `
           ratingUserUsername
           ratingEstablishmentId
           ratingEstablishmentName
+          review
           createdAt
           updatedAt
         }
@@ -41,6 +42,7 @@ export const onUpdateEstablishment = /* GraphQL */ `
           ratingUserUsername
           ratingEstablishmentId
           ratingEstablishmentName
+          review
           createdAt
           updatedAt
         }
@@ -66,6 +68,7 @@ export const onDeleteEstablishment = /* GraphQL */ `
           ratingUserUsername
           ratingEstablishmentId
           ratingEstablishmentName
+          review
           createdAt
           updatedAt
         }
@@ -85,6 +88,7 @@ export const onCreateRating = /* GraphQL */ `
       ratingUserUsername
       ratingEstablishmentId
       ratingEstablishmentName
+      review
       establishment {
         id
         name
@@ -110,6 +114,7 @@ export const onUpdateRating = /* GraphQL */ `
       ratingUserUsername
       ratingEstablishmentId
       ratingEstablishmentName
+      review
       establishment {
         id
         name
@@ -135,6 +140,7 @@ export const onDeleteRating = /* GraphQL */ `
       ratingUserUsername
       ratingEstablishmentId
       ratingEstablishmentName
+      review
       establishment {
         id
         name

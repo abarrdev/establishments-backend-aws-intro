@@ -13,5 +13,6 @@ type Rating @model {
 	ratingUserUsername: String!
 	ratingEstablishmentId: String!
 	ratingEstablishmentName: String!
+	review: String
 	establishment: Establishment @connection(name: "BusinessRatings")
 }
